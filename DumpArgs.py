@@ -8,7 +8,7 @@ def dump_args(func):
 			print "dump_args will print 'id', 'args' and 'kw' before this line prints"
 			print args
 			print kw
-
+			return None
 	
 	.. note:: this function is safe for use with Sphinx documentation. ``echo_func.__doc__ = func.__doc__`` does the magic
 	'''
@@ -28,7 +28,7 @@ def dump_args(func):
 		print spcr
 		return func(*args, **kw)
 	
-	# forces the calling function's docstring for use in sphinx documentation
+	# force the calling function's docstring for Sphinx documentation
 	echo_func.__doc__ = func.__doc__   
 	
 	return echo_func
