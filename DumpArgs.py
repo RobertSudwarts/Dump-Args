@@ -1,5 +1,14 @@
 def dump_args(func):
 	'''this decorator dumps (to STDOUT) the arguments passed to a function before the decorated function is called itself
+
+	:usage:
+		
+		@dump_args
+		def my_function(id, *args, **kw):
+			print "dump_args will print 'id', 'args' and 'kw' before this line prints"
+			print args
+			print kw
+
 	
 	.. note:: this function is safe for use with Sphinx documentation. ``echo_func.__doc__ = func.__doc__`` does the magic
 	'''
